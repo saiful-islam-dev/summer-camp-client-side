@@ -13,7 +13,7 @@ import { initializeApp } from "firebase/app";
 //   appId: "1:759140020880:web:4d9522157eb730b7725e15"
 // };
 
-console.log("fribase key", import.meta.env.VITE_apiKey);
+// console.log("fribase key", import.meta.env.VITE_apiKey);
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_apiKey,

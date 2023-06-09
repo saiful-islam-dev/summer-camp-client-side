@@ -2,42 +2,48 @@ import { Form, Link } from "react-router-dom";
 import login from "../../../assets/login.jpg";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { useForm } from "react-hook-form";
-// import useAuth from "../../../hooks/useAuth";
 import { Helmet } from "react-helmet-async";
 import useAuth from "../../../hooks/useAuth";
 import Swal from "sweetalert2";
+import { toast } from "react-hot-toast";
 
 const Login = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    // formState: { errors },
   } = useForm();
-  
-  const {signIn} = useAuth();
 
+  const { signIn, googleSignIn } = useAuth();
 
   const onSubmit = (data) => {
     console.log(data);
 
-    signIn(data.email, data.password)
-            .then(result => {
-                const user = result.user;
-                console.log(user);
-                Swal.fire({
-                    title: 'User Login Successful.',
-                    showClass: {
-                        popup: 'animate__animated animate__fadeInDown'
-                    },
-                    hideClass: {
-                        popup: 'animate__animated animate__fadeOutUp'
-                    }
-                });
-                // navigate(from, { replace: true });
-            })
+    signIn(data.email, data.password).then((result) => {
+      const user = result.user;
+      console.log(user);
+      Swal.fire({
+        title: "User Login Successful.",
+        showClass: {
+          popup: "animate__animated animate__fadeInDown",
+        },
+        hideClass: {
+          popup: "animate__animated animate__fadeOutUp",
+        },
+      });
+      // navigate(from, { replace: true });
+    });
   };
 
-  const handleGoogleLogIn = () => {};
+  const handleGoogleLogIn = () => {
+    googleSignIn()
+      .then(() => {
+        toast.success("LogIn successful!");
+        // navigate(from, { replace: true });
+      })
+      .catch((error) => toast.error(error.message));
+  };
+
   return (
     <>
       <Helmet>
@@ -46,10 +52,9 @@ const Login = () => {
       <div>
         <div className="flex justify-center items-center my-8">
           <img className="w-4/12 m-0" src={login} alt="" />
-          <div>
+          <div className="card w-96 bg-slate-200 shadow-xl items-center text-center py-8 rounded-lg">
             <Form
               onSubmit={handleSubmit(onSubmit)}
-              className="card w-96 bg-slate-200 shadow-xl items-center text-center py-8 rounded-lg"
             >
               <h1 className="text-2xl font-bold">LogIn</h1>
               <div className="py-6 w-full">
@@ -83,7 +88,8 @@ const Login = () => {
               <button type="submit" className="btns-primary">
                 LogIn
               </button>
-              <div className="py-4">
+            </Form>
+            <div className="py-4">
                 <button
                   onClick={handleGoogleLogIn}
                   className="text-base flex items-center gap-3 font-semibold btns-primary"
@@ -93,14 +99,13 @@ const Login = () => {
                   </span>{" "}
                   Continue with google
                 </button>
+                <button className="text-base flex items-center gap-3 font-semibold btns-primary">
+                  <span>
+                    <FaGithub />
+                  </span>{" "}
+                  Continue with github
+                </button>
               </div>
-              <button className="text-base flex items-center gap-3 font-semibold btns-primary">
-                <span>
-                  <FaGithub />
-                </span>{" "}
-                Continue with github
-              </button>
-            </Form>
           </div>
         </div>
       </div>

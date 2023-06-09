@@ -7,6 +7,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import { app } from "../firebase/firebase.config";
 import axios from "axios";
@@ -42,30 +43,20 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
 
-  const updateUserProfile = (name, photo) => {
-    return updateUserProfile(auth.currentUser, {
+  const updateUserProfile = (name, photoUrl) => {
+    return updateProfile(auth.currentUser, {
       displayName: name,
-      photoURL: photo,
+      photoURL: photoUrl,
     });
   };
 
+  console.log("auth", auth);
+
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (createUser) => {
-      setUser(createUser);
-      console.log("current User", createUser);
-
-    //   if (createUser) {
-    //     axios
-    //       .post("http://localhost:5000/jwt", { email: createUser.email })
-    //       .then((data) => {
-    //         localStorage.setItem("access-token", data.data.token);
-    //         setLoading(false);
-    //       });
-    //   } else {
-    //     localStorage.removeItem("access-token");
-    //   }
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+      console.log("current user", currentUser);
     });
-
     return () => {
       return unsubscribe();
     };
@@ -75,8 +66,8 @@ const AuthProvider = ({ children }) => {
     loading,
     user,
     logOut,
-    googleSignIn,
     signIn,
+    googleSignIn,
     createUser,
     updateUserProfile,
   };
