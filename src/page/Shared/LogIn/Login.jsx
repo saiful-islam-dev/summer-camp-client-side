@@ -1,26 +1,40 @@
 import { Form, Link } from "react-router-dom";
-import login from "../../assets/login.jpg";
+import login from "../../../assets/login.jpg";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { useForm } from "react-hook-form";
-import useAuth from "../../hooks/useAuth";
+// import useAuth from "../../../hooks/useAuth";
 import { Helmet } from "react-helmet-async";
+import useAuth from "../../../hooks/useAuth";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
-  const { SingIn } = useAuth();
+  
+  const {signIn} = useAuth();
+
 
   const onSubmit = (data) => {
     console.log(data);
 
-    SingIn(data.email, data.password).then((result) => {
-      const user = result.user;
-      console.log(user);
-    }).cat;
+    signIn(data.email, data.password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                Swal.fire({
+                    title: 'User Login Successful.',
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOutUp'
+                    }
+                });
+                // navigate(from, { replace: true });
+            })
   };
 
   const handleGoogleLogIn = () => {};

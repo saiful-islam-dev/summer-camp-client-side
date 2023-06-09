@@ -1,10 +1,9 @@
+import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Form, Link } from "react-router-dom";
-import { FaGoogle,FaGithub } from "react-icons/fa";
-import reg from "../../../assets/signup.jpg";
+import reg from "../../../assets/signup.jpg"
+
 
 const Signup = () => {
-
-    
     return (
         <div className="flex justify-center items-center my-8">
         <div>
