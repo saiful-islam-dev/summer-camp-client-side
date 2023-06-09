@@ -1,4 +1,4 @@
-import { Form, Link } from "react-router-dom";
+import { Form, Link, useLocation, useNavigate } from "react-router-dom";
 import login from "../../../assets/login.jpg";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { useForm } from "react-hook-form";
@@ -8,6 +8,10 @@ import Swal from "sweetalert2";
 import { toast } from "react-hot-toast";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+  
   const {
     register,
     handleSubmit,
@@ -31,7 +35,7 @@ const Login = () => {
           popup: "animate__animated animate__fadeOutUp",
         },
       });
-      // navigate(from, { replace: true });
+      navigate(from, { replace: true });
     });
   };
 
@@ -39,7 +43,7 @@ const Login = () => {
     googleSignIn()
       .then(() => {
         toast.success("LogIn successful!");
-        // navigate(from, { replace: true });
+        navigate(from, { replace: true });
       })
       .catch((error) => toast.error(error.message));
   };

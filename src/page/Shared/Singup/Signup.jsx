@@ -1,5 +1,5 @@
 import { FaGithub, FaGoogle } from "react-icons/fa";
-import { Form, Link } from "react-router-dom";
+import { Form, Link, useLocation, useNavigate } from "react-router-dom";
 import reg from "../../../assets/signup.jpg";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
@@ -7,6 +7,10 @@ import useAuth from "../../../hooks/useAuth";
 import Swal from "sweetalert2";
 
 const Signup = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+
   const {
     register,
     handleSubmit,
@@ -44,7 +48,7 @@ const Signup = () => {
                   showConfirmButton: false,
                   timer: 1500,
                 });
-                // navigate("/");
+                navigate(from, { replace: true });
               }
             });
         })
@@ -60,7 +64,7 @@ const Signup = () => {
     googleSignIn()
       .then(() => {
         toast.success("LogIn successful!");
-        // navigate(from, { replace: true });
+        navigate(from, { replace: true });
       })
       .catch((error) => toast.error(error.message));
   };

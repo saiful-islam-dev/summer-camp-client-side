@@ -3,7 +3,6 @@ import Main from "../layouts/Main";
 import Home from "../page/Home/Home";
 import Login from "../page/Shared/LogIn/Login";
 import Signup from "../page/Shared/Singup/Signup";
-import Loading from "../components/Loading/Loading";
 
 
 const router = createBrowserRouter([
