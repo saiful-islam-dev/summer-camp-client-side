@@ -2,7 +2,7 @@
 
 const Card = ({img,leftName,rightName,leftValue, rightValue }) => {
   return (
-      <div className="card w-full bg-base-300 shadow-xl">
+      <div className="card w-full bg-base-300 border shadow-xl">
         <figure>
           <div className="p-5">
           <img 

@@ -3,26 +3,44 @@ import useAuth from "../../../hooks/useAuth";
 import { toast } from "react-hot-toast";
 
 const Navbar = () => {
-  const {user, logOut} = useAuth();
+  const { user, logOut } = useAuth();
 
-  const handleLogOut = () =>{
-    logOut().then().catch((error) => {
-      // const errorCode = code;
-      toast.error(error.message)
-    })
-  }
+  const handleLogOut = () => {
+    logOut()
+      .then()
+      .catch((error) => {
+        // const errorCode = code;
+        toast.error(error.message);
+      });
+  };
 
-
-  const navOptions = <>
-  <li><NavLink>Home</NavLink></li>
-  <li><NavLink>Instructors</NavLink></li>
-  <li><NavLink>Classes</NavLink></li>
-  <li><NavLink>Dashboard</NavLink></li>
-  </>
+  const navOptions = (
+    <>
+      <li>
+        <NavLink to='/'
+          className={({ isActive }) => (isActive ? "active" : "text-white")}
+        >
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to='/classes'
+          className={({ isActive }) => (isActive ? "active" : "text-white")}>Classes</NavLink>
+      </li>
+      <li>
+        <NavLink to='/instructors'
+          className={({ isActive }) => (isActive ? "active" : "text-white")}>Instructors</NavLink>
+      </li>
+      <li>
+        <NavLink to='/'
+          className={({ isActive }) => (isActive ? "active" : "text-white")}>Dashboard</NavLink>
+      </li>
+    </>
+  );
 
   return (
     <div>
-      <div className="navbar bg-red-500 px-12">
+      <div className="navbar bg-black px-12">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="lg:hidden">
@@ -43,22 +61,20 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-compact dropdown-content text-white mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               {navOptions}
             </ul>
           </div>
           <Link className="normal-case text-xl flex items-center ">
-            <div className="lg:bg-pink-400 lg:p-3 rounded-full gap-1">
-              
-            </div>
+            <div className="lg:bg-pink-400 lg:p-3 rounded-full gap-1"></div>
             <span className="text-4xl text-slate-700 font-mono font-bold">
               Learn<span className="text-yellow-400">IQ</span>
             </span>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="flex gap-4 font-semibold text-lg">
+          <ul className="flex gap-4 font-semibold text-white text-lg">
             {navOptions}
           </ul>
         </div>
@@ -70,7 +86,10 @@ const Navbar = () => {
                   <img src={user?.photoURL} />
                 </div>
               </div>
-              <button onClick={handleLogOut} className="btn btn-primary font-semibold">
+              <button
+                onClick={handleLogOut}
+                className="btn btn-primary font-semibold"
+              >
                 SignOut
               </button>
             </div>

@@ -18,6 +18,7 @@ const Footer = () => {
           Providing reliable tech since 1992
         </p>
       </div>
+      <div className="border-l-4 border-black h-full"></div>
       <div>
         <span className="footer-title">Services</span>
         <a className="link link-hover">Branding</a>
