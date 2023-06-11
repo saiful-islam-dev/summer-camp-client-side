@@ -66,10 +66,9 @@ const Navbar = () => {
               {navOptions}
             </ul>
           </div>
-          <Link className="normal-case text-xl flex items-center ">
-            <div className="lg:bg-pink-400 lg:p-3 rounded-full gap-1"></div>
-            <span className="text-4xl text-slate-700 font-mono font-bold">
-              Learn<span className="text-yellow-400">IQ</span>
+          <Link to="/" className="normal-case text-xl flex items-center">
+            <span className="text-4xl text-white uppercase font-mono font-bold">
+            Summer<span className="text-yellow-400 lowercase">sports</span>
             </span>
           </Link>
         </div>

@@ -6,6 +6,7 @@ const ClassesPage = () => {
     <div>
       <SectionTitle heading="our classes" subHeading='Join us for an exciting sports camp adventure that combines skill development, team building, and friendly competition. From honing your techniques to exploring various sports, our camp offers a dynamic and inclusive experience for young athletes to thrive, grow, and foster a love for sports.'/>
 
+
       <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
         <div className="card w-96 border-4 border-slate-900 rounded-md bg-base-300 shadow-xl">
           <figure>
