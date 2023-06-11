@@ -32,7 +32,7 @@ const Navbar = () => {
           className={({ isActive }) => (isActive ? "active" : "text-white")}>Instructors</NavLink>
       </li>
       <li>
-        <NavLink to='/'
+        <NavLink to='/dashboard'
           className={({ isActive }) => (isActive ? "active" : "text-white")}>Dashboard</NavLink>
       </li>
     </>
@@ -67,8 +67,8 @@ const Navbar = () => {
             </ul>
           </div>
           <Link to="/" className="normal-case text-xl flex items-center">
-            <span className="text-4xl text-white uppercase font-mono font-bold">
-            Summer<span className="text-yellow-400 lowercase">sports</span>
+            <span className="text-3xl text-white uppercase font-bold">
+            Summer<span className="text-yellow-400 font-mono lowercase">sports</span>
             </span>
           </Link>
         </div>
@@ -80,10 +80,12 @@ const Navbar = () => {
         <div className="navbar-end">
           {user ? (
             <div className="flex items-center gap-3">
+              <div className="lg:tooltip lg:tooltip-bottom" data-tip={user?.displayName}>
               <div className="avatar">
                 <div className="w-6 rounded-full">
                   <img src={user?.photoURL} />
                 </div>
+              </div>
               </div>
               <button
                 onClick={handleLogOut}

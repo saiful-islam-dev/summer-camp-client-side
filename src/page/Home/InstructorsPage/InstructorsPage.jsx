@@ -1,15 +1,13 @@
-import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import img from "../../../assets/home/profile.jpg";
 
 const InstructorsPage = () => {
   return (
     <div>
-      <SectionTitle
-        heading="Learn from the Best in the Field"
-        subHeading="Our summer camp boasts a remarkable lineup of experienced instructors who bring a wealth of knowledge and passion to their teaching. With years of expertise in their respective fields, they are committed to providing top-notch instruction and nurturing the talents of our campers."
-      />
+     <div className="bg-slate-900">
+        <h1 className="text-white text-center text-3xl font-bold uppercase underline underline-offset-8 py-20">our Instructor</h1>
+      </div>
 
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-3 py-7 px-4">
         <div className="card w-96 border-4 border-slate-900 rounded-md bg-base-300 shadow-xl">
           <figure>
             <div className="p-3">

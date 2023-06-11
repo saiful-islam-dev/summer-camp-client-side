@@ -1,13 +1,13 @@
-import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import img from "../../../assets/home/profile.jpg";
 
 const ClassesPage = () => {
   return (
     <div>
-      <SectionTitle heading="our classes" subHeading='Join us for an exciting sports camp adventure that combines skill development, team building, and friendly competition. From honing your techniques to exploring various sports, our camp offers a dynamic and inclusive experience for young athletes to thrive, grow, and foster a love for sports.'/>
+      <div className="bg-slate-900">
+        <h1 className="text-white text-center text-3xl font-bold uppercase underline underline-offset-8 py-20">our classes</h1>
+      </div>
 
-
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-3 py-7 px-4">
         <div className="card w-96 border-4 border-slate-900 rounded-md bg-base-300 shadow-xl">
           <figure>
             <div className="p-3">
