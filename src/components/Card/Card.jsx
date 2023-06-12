@@ -8,7 +8,7 @@ const Card = ({img,leftName,rightName,leftValue, rightValue }) => {
           <img 
           className="rounded-lg"
             src={img}
-            alt="Shoes"
+            alt="img"
           />
           </div>
         </figure>

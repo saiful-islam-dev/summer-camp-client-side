@@ -1,3 +1,7 @@
+import { FaHome } from "react-icons/fa";
+import { FcBookmark } from "react-icons/fc";
+import { NavLink, Outlet } from "react-router-dom";
+
 const Dashboard = () => {
   return (
     <div className="drawer lg:drawer-open">
@@ -10,16 +14,66 @@ const Dashboard = () => {
         >
           Open drawer
         </label>
+        <Outlet />
       </div>
       <div className="drawer-side">
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-        <ul className="menu p-4 w-80 h-full bg-red-700 text-base-content">
+        <ul className="menu p-4 w-80 h-full bg-slate-300 text-base-content">
           {/* Sidebar content here */}
           <li>
-            <a>Sidebar Item 1</a>
+            <NavLink to="manageusers">
+              {" "}
+              <FaHome></FaHome>Manage Users
+            </NavLink>
           </li>
           <li>
-            <a>Sidebar Item 2</a>
+            <NavLink to="manageclass">Manage Classes</NavLink>
+          </li>
+          {/* all user down */}
+          <div className="divider"></div>
+          <li>
+            <NavLink to="addclass">
+              <FaHome></FaHome> Add A Class
+            </NavLink>{" "}
+          </li>
+          <li>
+            <NavLink to="myclasses">
+              <FcBookmark />
+              My Classes
+            </NavLink>{" "}
+          </li>
+          <div className="divider"></div>
+          <li>
+            <NavLink to="/">
+              <FaHome></FaHome>My Selected Classes
+            </NavLink>{" "}
+          </li>
+          <li>
+            <NavLink to="/">
+              <FaHome></FaHome>My Enrolled Classes
+            </NavLink>{" "}
+          </li>
+          <li>
+            <NavLink to="/">
+              <FaHome></FaHome>Payment Histroy
+            </NavLink>{" "}
+          </li>
+          <div className="divider"></div>
+          <li>
+            <NavLink to="/">
+              <FaHome></FaHome>Home
+            </NavLink>{" "}
+          </li>
+          <li>
+            <NavLink to="/classes">Our Class</NavLink>
+          </li>
+          <li>
+            <NavLink to="/instructors">Order Instructors</NavLink>
+          </li>
+          <li>
+            <button className="border-2 border-black py-2 px-3 text-black text-lg hover:bg-yellow-400 hover:border-yellow hover:text-black transition-all">
+              Discover more
+            </button>
           </li>
         </ul>
       </div>

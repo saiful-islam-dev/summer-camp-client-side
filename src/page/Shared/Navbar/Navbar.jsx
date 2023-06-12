@@ -61,13 +61,13 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content text-white mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-compact dropdown-content text-white mt-3 p-2 shadow bg-base-100 rounded-box w-52 z-10"
             >
               {navOptions}
             </ul>
           </div>
           <Link to="/" className="normal-case text-xl flex items-center">
-            <span className="text-3xl text-white uppercase font-bold">
+            <span className="text-md pl-2 md:text-3xl text-white uppercase font-bold">
             Summer<span className="text-yellow-400 font-mono lowercase">sports</span>
             </span>
           </Link>

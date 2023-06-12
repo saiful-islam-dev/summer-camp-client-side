@@ -1,8 +1,8 @@
 const Unknow = () => {
   return (
     <div className="bg-black flex flex-col text-center py-36 mt-14">
-      <h2 className="text-white text-4xl uppercase font-mono font-bold">Join us this summer</h2>
-      <p className="text-white text-2xl font-mono py-5 w-2/4 mx-auto">
+      <h2 className="text-white text-2xl md:text-4xl uppercase font-mono font-bold">Join us this summer</h2>
+      <p className="text-white text-xl md:text-2xl font-mono py-5 w-5/6 md:w-2/4 mx-auto">
         Summer sport Dnorllmen for summer 2023 is now open! Join our mailing
         list to learn more about our camps and recive other helpfull resources.Join us and learn from the best this summer.
       </p>

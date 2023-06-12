@@ -11,7 +11,7 @@ const InstructorsPage = () => {
         <div className="card w-96 border-4 border-slate-900 rounded-md bg-base-300 shadow-xl">
           <figure>
             <div className="p-3">
-              <img className="rounded-md" src={img} alt="Shoes" />
+              <img className="rounded-md border-4 border-slate-900" src={img} alt="Shoes" />
             </div>
           </figure>
           <div className="card-body">
@@ -33,7 +33,7 @@ const InstructorsPage = () => {
                 </p>
               </div>
             </div>
-            <button className="btn btn-active btn-ghost">Select</button>
+            <button className="btn btn-outline">Select</button>
           </div>
         </div>
       </div>

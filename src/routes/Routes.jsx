@@ -7,45 +7,75 @@ import ErrorPage from "../page/ErrorPage/ErrorPage";
 import ClassesPage from "../page/Home/ClassesPage/ClassesPage";
 import InstructorsPage from "../page/Home/InstructorsPage/InstructorsPage";
 import Dashboard from "../layouts/Dashboard";
-
+import ManageUsers from "../page/Dashboard/Admin/ManageUsers/ManageUsers";
+import ManageClasses from "../page/Dashboard/Admin/ManageClasses/ManageClasses";
+import AddClass from "../page/Dashboard/Instuctors/AddClass/AddClass";
+import MyClasses from "../page/Dashboard/Instuctors/MyClasses/MyClasses";
+import SeclectedClass from "../page/Dashboard/Student/SeclectedClass/SeclectedClass";
+import PaymentHistory from "../page/Dashboard/Student/PaymentHistory/PaymentHistory";
+import EnrolledClass from "../page/Dashboard/Student/EnrolledClass/EnrolledClass";
 
 const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Main />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "signup",
+        element: <Signup />,
+      },
+      {
+        path: "/classes",
+        element: <ClassesPage />,
+      },
+      {
+        path: "/instructors",
+        element: <InstructorsPage />,
+      },
+    ]},
     {
-      path: "/",
-      element: <Main/>,
-      errorElement: <ErrorPage />,
+      path: "dashboard",
+      element: <Dashboard />,
       children: [
         {
-            path: "/",
-            element: <Home/>
+          path: "manageusers",
+          element: <ManageUsers />,
         },
         {
-          path: "/login",
-          element: <Login/>
+          path: "manageclass",
+          element: <ManageClasses/>
         },
         {
-          path: 'signup',
-          element: <Signup/>
+          path: "addclass",
+          element: <AddClass/>
         },
         {
-          path: "/classes",
-          element: <ClassesPage/>
+          path: "myclasses",
+          element: <MyClasses/>
         },
         {
-          path: "/instructors",
-          element: <InstructorsPage/>
+          path: "SeclectedClass",
+          element: <SeclectedClass/>
         },
-      ]
-    },
-    {
-      path: 'dashboard',
-      element: <Dashboard/>,
-      children: [
         {
-          path: ""
+          path: "phistroy",
+          element: <PaymentHistory/>
+        },
+        {
+          path: "enrolledclass",
+          element: <EnrolledClass/>
         }
-      ]
-    }
-  ]);
-  
+      ],
+    },
+]);
+
 export default router;
