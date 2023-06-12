@@ -33,7 +33,7 @@ const ClassesPage = () => {
                 </p>
               </div>
             </div>
-              <button className="btn btn-active btn-ghost">Select</button>
+            <button className="btn btn-outline">Select</button>
           </div>
         </div>
       </div>
