@@ -1,8 +1,12 @@
 import { FaHome } from "react-icons/fa";
 import { FcBookmark } from "react-icons/fc";
 import { NavLink, Outlet } from "react-router-dom";
+// import useAdmin from "../hooks/useAdmin";
 
 const Dashboard = () => {
+  // const [useRole, isRoleLoading] = useAdmin();
+  
+  // console.log(useRole);
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />

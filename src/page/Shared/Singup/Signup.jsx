@@ -6,6 +6,7 @@ import { toast } from "react-hot-toast";
 import useAuth from "../../../hooks/useAuth";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
+import SocialLogin from "../../../components/SocialLogin/SocialLogin";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ const Signup = () => {
     formState: { errors },
   } = useForm();
 
-  const { googleSignIn, createUser, updateUserProfile } = useAuth();
+  const { createUser, updateUserProfile } = useAuth();
 
   const onSubmit = (data) => {
     console.log(data);
@@ -61,14 +62,6 @@ const Signup = () => {
   
   };
 
-  const handleGoogleLogIn = () => {
-    googleSignIn()
-      .then(() => {
-        toast.success("LogIn successful!");
-        navigate(from, { replace: true });
-      })
-      .catch((error) => toast.error(error.message));
-  };
 
   return (
     <>
@@ -156,23 +149,7 @@ const Signup = () => {
             Register
           </button>
         </Form>
-        <div className="py-4">
-          <button
-              onClick={handleGoogleLogIn}
-              className="text-base flex items-center gap-3 font-semibold btns-primary"
-            >
-              <span>
-                <FaGoogle />
-              </span>{" "}
-              Continue with google
-            </button>
-          </div>
-          <button className="text-base flex items-center gap-3 font-semibold btns-primary">
-            <span>
-              <FaGithub />
-            </span>{" "}
-            Continue with github
-          </button>
+        <SocialLogin/>
       </div>
       <img className="w-4/12 m-0" src={reg} alt="" />
     </div>

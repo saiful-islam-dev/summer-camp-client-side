@@ -32,8 +32,8 @@ const Navbar = () => {
           className={({ isActive }) => (isActive ? "active" : "text-white")}>Instructors</NavLink>
       </li>
       <li>
-        <NavLink to='/dashboard'
-          className={({ isActive }) => (isActive ? "active" : "text-white")}>Dashboard</NavLink>
+        {user && <NavLink to='/dashboard'
+          className={({ isActive }) => (isActive ? "active" : "text-white")}>Dashboard</NavLink>}
       </li>
     </>
   );
@@ -89,7 +89,7 @@ const Navbar = () => {
               </div>
               <button
                 onClick={handleLogOut}
-                className="btn btn-primary font-semibold"
+                className="btns-primary"
               >
                 SignOut
               </button>

@@ -1,11 +1,10 @@
 import { Form, Link, useLocation, useNavigate } from "react-router-dom";
 import login from "../../../assets/login.jpg";
-import { FaGithub, FaGoogle } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import useAuth from "../../../hooks/useAuth";
 import Swal from "sweetalert2";
-import { toast } from "react-hot-toast";
 import { Helmet } from "react-helmet-async";
+import SocialLogin from "../../../components/SocialLogin/SocialLogin";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -18,7 +17,7 @@ const Login = () => {
     // formState: { errors },
   } = useForm();
 
-  const { signIn, googleSignIn } = useAuth();
+  const { signIn } = useAuth();
 
   const onSubmit = (data) => {
     console.log(data);
@@ -39,14 +38,6 @@ const Login = () => {
     });
   };
 
-  const handleGoogleLogIn = () => {
-    googleSignIn()
-      .then(() => {
-        toast.success("LogIn successful!");
-        navigate(from, { replace: true });
-      })
-      .catch((error) => toast.error(error.message));
-  };
 
   return (
     <div>
@@ -87,23 +78,7 @@ const Login = () => {
               LogIn
             </button>
           </Form>
-          <div className="py-4">
-            <button
-              onClick={handleGoogleLogIn}
-              className="text-base flex items-center gap-3 font-semibold btns-primary"
-            >
-              <span>
-                <FaGoogle />
-              </span>{" "}
-              Continue with google
-            </button>
-            <button className="text-base flex items-center gap-3 font-semibold btns-primary">
-              <span>
-                <FaGithub />
-              </span>{" "}
-              Continue with github
-            </button>
-          </div>
+          <SocialLogin/>
         </div>
       </div>
     </div>

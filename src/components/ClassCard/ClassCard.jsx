@@ -13,13 +13,13 @@ const ClassCard = ({element}) => {
         console.log(aClass,);
 
         if (user && user.email) {
-            const seclectClass = {classId: _id, name, image, price, instructorName,email: user.email}
+            const selectClass = {classId: _id, name, image, price, instructorName,email: user.email}
             fetch('http://localhost:5010/selectClass', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
                 },
-                body: JSON.stringify(seclectClass)
+                body: JSON.stringify(selectClass)
             })
             .then(res => res.json())
             .then(data => {
