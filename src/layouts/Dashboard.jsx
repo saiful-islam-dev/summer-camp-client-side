@@ -44,17 +44,17 @@ const Dashboard = () => {
           </li>
           <div className="divider"></div>
           <li>
-            <NavLink to="/">
+            <NavLink to="seclectedClass">
               <FaHome></FaHome>My Selected Classes
             </NavLink>{" "}
           </li>
           <li>
-            <NavLink to="/">
+            <NavLink to="enrolledclass" className="py-2">
               <FaHome></FaHome>My Enrolled Classes
             </NavLink>{" "}
           </li>
           <li>
-            <NavLink to="/">
+            <NavLink to="phistroy">
               <FaHome></FaHome>Payment Histroy
             </NavLink>{" "}
           </li>

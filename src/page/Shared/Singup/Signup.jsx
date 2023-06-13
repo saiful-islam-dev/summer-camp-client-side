@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import useAuth from "../../../hooks/useAuth";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -70,6 +71,10 @@ const Signup = () => {
   };
 
   return (
+    <>
+    <Helmet>
+        <title>SUMMERsports || SingUp</title>
+      </Helmet>
     <div className="flex justify-center items-center my-8">
       <div className="card w-96 bg-slate-200 shadow-xl items-center text-center py-8 rounded-lg">
         <Form
@@ -171,6 +176,7 @@ const Signup = () => {
       </div>
       <img className="w-4/12 m-0" src={reg} alt="" />
     </div>
+    </>
   );
 };
 

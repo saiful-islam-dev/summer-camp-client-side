@@ -18,6 +18,7 @@ const InstructorCart = ({instructor}) => {
             <p className="capitalize font-semibold">
               Classes taken by <span className="">{instructor.numberOfClassesTaken}</span> him</p>
           </div>
+          <button className="btn btn-outline">See Classes</button>
         </div>
       </div> 
     );

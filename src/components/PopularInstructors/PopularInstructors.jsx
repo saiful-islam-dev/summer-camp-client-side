@@ -5,7 +5,7 @@ import useInstructor from "../../hooks/useInstructor";
 const PopularInstructors = () => {
   const [instructors] = useInstructor();
   return (
-    <div>
+    <div className="px-20 pb-10">
       <SectionTitle
         heading="Learn from the Best in the Field"
         subHeading="Our summer camp is led by a team of accomplished instructors who bring their expertise and passion to create an unforgettable learning journey for every participant."
