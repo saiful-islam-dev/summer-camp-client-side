@@ -1,12 +1,12 @@
 import { FaHome } from "react-icons/fa";
 import { FcBookmark } from "react-icons/fc";
 import { NavLink, Outlet } from "react-router-dom";
-// import useAdmin from "../hooks/useAdmin";
+import useAdmin from "../hooks/useAdmin";
 
 const Dashboard = () => {
-  // const [useRole, isRoleLoading] = useAdmin();
-  
-  // console.log(useRole);
+  const [useRole, isRoleLoading] = useAdmin();
+
+  console.log(useRole);
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -24,44 +24,55 @@ const Dashboard = () => {
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
         <ul className="menu p-4 w-80 h-full bg-slate-300 text-base-content">
           {/* Sidebar content here */}
-          <li>
-            <NavLink to="manageusers">
-              {" "}
-              <FaHome></FaHome>Manage Users
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="manageclass">Manage Classes</NavLink>
-          </li>
+
+          {useRole?.role === "admin" ? (
+            <>
+              <li>
+                <NavLink to="manageusers">
+                  {" "}
+                  <FaHome></FaHome>Manage Users
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="manageclass">Manage Classes</NavLink>
+              </li>
+            </>
+          ) : useRole?.role === "instructor" ? (
+            <>
+              <li>
+                <NavLink to="addclass">
+                  <FaHome></FaHome> Add A Class
+                </NavLink>{" "}
+              </li>
+              <li>
+                <NavLink to="myclasses">
+                  <FcBookmark />
+                  My Classes
+                </NavLink>{" "}
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <NavLink to="seclectedClass">
+                  <FaHome></FaHome>My Selected Classes
+                </NavLink>{" "}
+              </li>
+              <li>
+                <NavLink to="enrolledclass" className="py-2">
+                  <FaHome></FaHome>My Enrolled Classes
+                </NavLink>{" "}
+              </li>
+              <li>
+                <NavLink to="phistroy">
+                  <FaHome></FaHome>Payment Histroy
+                </NavLink>{" "}
+              </li>
+            </>
+          )}
+
           {/* all user down */}
-          <div className="divider"></div>
-          <li>
-            <NavLink to="addclass">
-              <FaHome></FaHome> Add A Class
-            </NavLink>{" "}
-          </li>
-          <li>
-            <NavLink to="myclasses">
-              <FcBookmark />
-              My Classes
-            </NavLink>{" "}
-          </li>
-          <div className="divider"></div>
-          <li>
-            <NavLink to="seclectedClass">
-              <FaHome></FaHome>My Selected Classes
-            </NavLink>{" "}
-          </li>
-          <li>
-            <NavLink to="enrolledclass" className="py-2">
-              <FaHome></FaHome>My Enrolled Classes
-            </NavLink>{" "}
-          </li>
-          <li>
-            <NavLink to="phistroy">
-              <FaHome></FaHome>Payment Histroy
-            </NavLink>{" "}
-          </li>
+
           <div className="divider"></div>
           <li>
             <NavLink to="/">

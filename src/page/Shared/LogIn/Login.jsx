@@ -5,6 +5,7 @@ import useAuth from "../../../hooks/useAuth";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
 import SocialLogin from "../../../components/SocialLogin/SocialLogin";
+import { toast } from "react-hot-toast";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -35,6 +36,11 @@ const Login = () => {
         },
       });
       navigate(from, { replace: true });
+    }) .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // console.log(errorCode, errorMessage);
+      toast.error(errorMessage,errorCode);
     });
   };
 
