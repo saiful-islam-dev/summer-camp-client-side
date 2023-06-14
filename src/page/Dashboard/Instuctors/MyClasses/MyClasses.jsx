@@ -42,23 +42,14 @@ const MyClasses = () => {
             {datas?.map((data, index) => (
               <tr key={data._id}>
                 <th>{index + 1}</th>
-                <td>{user?.name}</td>
-                <td>{user?.status}</td>
-                <td>{user?.availableSeats}</td>
+                <td>{data.name}</td>
+                <td>{data.status}</td>
+                <td>{data.availableSeats}</td>
                 <td>
                 <button className="btn btn-active btn-ghost">update</button>
                 </td>
               </tr>
             ))}
-            {/* {datas.map((data, index) => (
-              <tr key={data._id}>
-                <th>{index + 1}</th>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-                <td></td>
-                <td></td>
-              </tr>
-            ))} */}
           </tbody>
         </table>
       </div>
