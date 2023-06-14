@@ -51,7 +51,7 @@ const Dashboard = () => {
                 </NavLink>{" "}
               </li>
             </>
-          ) : (
+          ) : useRole?.role === "student" ?  (
             <>
               <li>
                 <NavLink to="seclectedClass">
@@ -69,7 +69,7 @@ const Dashboard = () => {
                 </NavLink>{" "}
               </li>
             </>
-          )}
+          ): <></>}
 
           {/* all user down */}
 
