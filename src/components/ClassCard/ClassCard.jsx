@@ -10,11 +10,11 @@ const ClassCard = ({element}) => {
 
 
     const handleSecletClass = (aClass) =>{
-        console.log(aClass,);
+        console.log("a class", aClass,);
 
         if (user && user.email) {
             const selectClass = {classId: _id, name, image, price, instructorName,email: user.email}
-            fetch('http://localhost:5010/selectClass', {
+            fetch('https://b7a12-summer-camp-server-side-saiful264-saiful264.vercel.app/selectClass', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

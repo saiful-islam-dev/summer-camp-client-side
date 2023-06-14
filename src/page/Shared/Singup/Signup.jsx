@@ -1,4 +1,3 @@
-import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Form, Link, useLocation, useNavigate } from "react-router-dom";
 import reg from "../../../assets/signup.jpg";
 import { useForm } from "react-hook-form";
@@ -32,7 +31,7 @@ const Signup = () => {
         .then(() => {
           const saveUser = { name: data.name, email: data.email, role:"student" };
 
-          fetch("http://localhost:5010/users", {
+          fetch("https://b7a12-summer-camp-server-side-saiful264-saiful264.vercel.app/users", {
             method: "POST",
             headers: {
               "content-type": "application/json",

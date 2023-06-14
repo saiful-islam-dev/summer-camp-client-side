@@ -1,10 +1,12 @@
 import { useForm } from "react-hook-form";
 import SectionTitle from "../../../../components/SectionTitle/SectionTitle";
 import Swal from "sweetalert2";
+import useAuth from "../../../../hooks/useAuth";
 
 const img_hosting_token = import.meta.env.VITE_Image_Upload_token;
 
 const AddClass = () => {
+  const {user} = useAuth();
   const { register, handleSubmit, reset } = useForm();
 
   const img_hosting_url = `https://api.imgbb.com/1/upload?expiration=600&key=${img_hosting_token}`;
@@ -31,10 +33,11 @@ const AddClass = () => {
           instructorEmail,
           availableSeats,
           image: imgURL,
+          status: "panding"
         };
         console.log(newItem);
 
-        fetch("http://localhost:5010/class", {
+        fetch("https://b7a12-summer-camp-server-side-saiful264-saiful264.vercel.app/class", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -138,6 +141,7 @@ const AddClass = () => {
             </label>
             <input
               type="email"
+              defaultValue={user?.email}
               {...register("instructorEmail", { required: true })}
               placeholder="Instructor Email"
               className="input input-bordered w-full "

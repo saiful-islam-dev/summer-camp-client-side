@@ -4,7 +4,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../hooks/useAdmin";
 
 const Dashboard = () => {
-  const [useRole, isRoleLoading] = useAdmin();
+  const [useRole] = useAdmin();
 
   console.log(useRole);
   return (
@@ -84,11 +84,6 @@ const Dashboard = () => {
           </li>
           <li>
             <NavLink to="/instructors">Order Instructors</NavLink>
-          </li>
-          <li>
-            <button className="border-2 border-black py-2 px-3 text-black text-lg hover:bg-yellow-400 hover:border-yellow hover:text-black transition-all">
-              Discover more
-            </button>
           </li>
         </ul>
       </div>
