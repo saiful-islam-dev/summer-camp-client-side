@@ -30,7 +30,7 @@ const Dashboard = () => {
               <li>
                 <NavLink to="manageusers">
                   {" "}
-                  <FaHome></FaHome>Manage Users
+                  Manage Users
                 </NavLink>
               </li>
               <li>
@@ -41,12 +41,11 @@ const Dashboard = () => {
             <>
               <li>
                 <NavLink to="addclass">
-                  <FaHome></FaHome> Add A Class
+                  Add A Class
                 </NavLink>{" "}
               </li>
               <li>
                 <NavLink to="myclasses">
-                  <FcBookmark />
                   My Classes
                 </NavLink>{" "}
               </li>
@@ -55,17 +54,17 @@ const Dashboard = () => {
             <>
               <li>
                 <NavLink to="seclectedClass">
-                  <FaHome></FaHome>My Selected Classes
+                  My Selected Classes
                 </NavLink>{" "}
               </li>
               <li>
                 <NavLink to="enrolledclass" className="py-2">
-                  <FaHome></FaHome>My Enrolled Classes
+                  My Enrolled Classes
                 </NavLink>{" "}
               </li>
               <li>
                 <NavLink to="phistroy">
-                  <FaHome></FaHome>Payment Histroy
+                  Payment Histroy
                 </NavLink>{" "}
               </li>
             </>

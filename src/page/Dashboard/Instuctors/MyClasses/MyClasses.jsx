@@ -20,7 +20,7 @@ const MyClasses = () => {
   return (
     <div className="w-full">
       <Helmet>
-        <title>Bistro Boss | All users</title>
+        <title> SUMMERsports || MY Class</title>
       </Helmet>
 
       <h3 className="text-3xl font-semibold my-4">

@@ -8,7 +8,7 @@ const ClassesPage = () => {
   return (
     <div>
       <Helmet>
-        <title> SUMMERsports || classes</title>
+        <title> SUMMERsports || Classes</title>
       </Helmet>
       <div className="bg-slate-900">
         <h1 className="text-white text-center text-3xl font-bold uppercase underline underline-offset-8 py-20">

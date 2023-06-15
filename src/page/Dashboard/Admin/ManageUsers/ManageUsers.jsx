@@ -66,7 +66,7 @@ const ManageUsers = () => {
   return (
     <div className="w-full">
       <Helmet>
-        <title>Bistro Boss | All users</title>
+        <title> SUMMERsports || All users</title>
       </Helmet>
       <h3 className="text-3xl font-semibold my-4">
         Total Users: {users.length}
@@ -75,7 +75,7 @@ const ManageUsers = () => {
         <table className="table table-zebra w-full">
           {/* head */}
           <thead>
-            <tr>
+            <tr className="bg-green-300">
               <th>#</th>
               <th>Name</th>
               <th>Email</th>

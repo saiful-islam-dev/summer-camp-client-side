@@ -15,6 +15,7 @@ import SeclectedClass from "../page/Dashboard/Student/SeclectedClass/SeclectedCl
 import PaymentHistory from "../page/Dashboard/Student/PaymentHistory/PaymentHistory";
 import EnrolledClass from "../page/Dashboard/Student/EnrolledClass/EnrolledClass";
 import PrivateRoute from "./PrivateRoute";
+import Payment from "../page/Dashboard/Student/Payment/Payment";
 
 const router = createBrowserRouter([
   {
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
         {
           path: "seclectedClass",
           element: <SeclectedClass/>
+        },
+        {
+          path: "payment",
+          element: <Payment/>
         },
         {
           path: "phistroy",

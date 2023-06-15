@@ -41,7 +41,7 @@ const SeclectedClass = () => {
   return (
     <div className="w-full">
       <Helmet>
-        <title>Bistro Boss | My Cart</title>
+        <title> SUMMERsports || Seclected Class</title>
       </Helmet>
       <div className="uppercase font-semibold h-[60px] flex justify-evenly items-center">
         <h3 className="text-3xl">Total Items: {selectClass.length}</h3>
@@ -54,7 +54,7 @@ const SeclectedClass = () => {
         <table className="table w-full">
           {/* head */}
           <thead>
-            <tr>
+            <tr className="bg-green-300">
               <th>#</th>
               <th>img</th>
               <th>class Name</th>
