@@ -6,8 +6,6 @@ import Swal from "sweetalert2";
 
 const SeclectedClass = () => {
   const [selectClass, , refetch] = useSelectClass();
-  // console.log(selectClass);
-   // how does reduce work!!!
    const total = selectClass.reduce((sum, item) => item.price + sum, 0);
    const handleDelete = item => {
     Swal.fire({
@@ -44,7 +42,7 @@ const SeclectedClass = () => {
         <title> SUMMERsports || Seclected Class</title>
       </Helmet>
       <div className="uppercase font-semibold h-[60px] flex justify-evenly items-center">
-        <h3 className="text-3xl">Total Items: {selectClass.length}</h3>
+        <h3 className="text-3xl">Total Class: {selectClass.length}</h3>
         <h3 className="text-3xl">Total Price: ${total}</h3>
         <Link to="/dashboard/payment">
           <button className="btn btn-warning btn-sm">PAY</button>

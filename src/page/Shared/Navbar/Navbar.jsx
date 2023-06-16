@@ -95,7 +95,7 @@ const Navbar = () => {
               </button>
             </div>
           ) : (
-            <Link to="/login" className="btns-primary font-semibold">
+            <Link to="/login" className="btns-primary font-bold">
               Login
             </Link>
           )}
