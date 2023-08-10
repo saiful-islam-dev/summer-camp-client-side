@@ -3,6 +3,7 @@ import PopularClasses from "../../components/PopularClasses/PopularClasses";
 import PopularInstructors from "../../components/PopularInstructors/PopularInstructors";
 import Unknow from "../../components/Unknow/Unknow";
 import Banner from "../../components/banner/Banner";
+import Faq from "./Faq.jsx/Faq";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <PopularClasses />
       <Unknow />
       <PopularInstructors />
+      <Faq/>
     </div>
   );
 };
